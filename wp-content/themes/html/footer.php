@@ -55,7 +55,6 @@
     </div>
     <!--end page-wrapper-->
 </div>
-<button type="" id="click">click</button>
 <script>
     var global_url = '<?php echo get_template_directory_uri() .'/' ?>';
 </script>
@@ -102,41 +101,6 @@
             icon: "<?php echo get_template_directory_uri(); ?>/assets/img/marker.png"
         });
     }
-    $(document).ready(function() {
-        $('#click').click(function(event) {
-        $.ajax({
-                    type : "post", //Phương thức truyền post hoặc get
-                    dataType : "json", //Dạng dữ liệu trả về xml, json, script, or html
-                    url : '<?php echo admin_url('admin-ajax.php');?>', //Đường dẫn chứa hàm xử lý dữ liệu. Mặc định của WP như vậy
-                    data : {
-                        action: "thongbao", //Tên action
-                        hoten : "Long",
-                        tinhan : "Long",
-                        dienthoai : "0969696969",
-                        select_product : "1",
-                    },
-                    context: this,
-                    beforeSend: function(){
-                        //Làm gì đó trước khi gửi dữ liệu vào xử lý
-                    },
-                    success: function(response) {
-                        //Làm gì đó khi dữ liệu đã được xử lý
-                        if(response.success) {
-                            alert(response.success);
-                            location.reload();
-                            // $('#myModalform').modal('hide');
-                        }
-                        else {
-                            alert('Đã có lỗi xảy ra');
-                        }
-                    },
-                    error: function( jqXHR, textStatus, errorThrown ){
-                        //Làm gì đó khi có lỗi xảy ra
-                        console.log( 'The following error occured: ' + textStatus, errorThrown );
-                    }
-                });
-        });
-    });
 </script>
 <?php wp_footer(); ?>
 <!--[if lte IE 9]>

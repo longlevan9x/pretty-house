@@ -24,7 +24,7 @@
                 <div class="heading-wrapper">
                     <div class="container">
                         <div class="heading">
-                            <div class="title parallax-element"><h1>Architecture<br>is our life & passion</h1>
+                            <div class="title parallax-element"><h1><?php bloginfo('name') ?></h1>
                                 <a href="#our-works" class="icon opacity-60">Show me the works<i class="arrow_right"></i></a>
                             </div>
                             <div class="owl-navigation"></div>

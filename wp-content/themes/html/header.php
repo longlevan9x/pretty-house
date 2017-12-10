@@ -20,6 +20,7 @@
         <link rel="stylesheet" href="<?php echo get_template_directory_uri() .'/' ?>assets/css/magnific-popup.css" type="text/css">
     <?php endif ?>
     <link rel="stylesheet" href="<?php echo get_template_directory_uri() .'/' ?>assets/css/style.css" type="text/css">
+    <link rel="stylesheet" href="<?php echo get_template_directory_uri() .'/' ?>assets/css/custom.css" type="text/css">
 
     <title>Archits</title>
     <style type="text/css" media="screen">
