@@ -172,57 +172,6 @@ function custom_post_type_slide()
   add_post_type_support('slider', 'thumbnail');
 }
 
-
-class My_Custom_Nav_Walker extends Walker_Nav_Menu {
-
-    function start_lvl(&$output, $depth = 0, $args = array()) {
-        $output .= "\n<ul role=\"menu\" class=\"dropdown-menu text-center \">\n";
-    }
-
-    function start_el(&$output, $item, $depth = 0, $args = array(), $id = 0) {
-        $item_html = '';
-        parent::start_el($item_html, $item, $depth, $args);
-    /*<li><a href="<?php echo get_site_url() . '/'; ?>">Home</a></li>
-          <li><a href="<?php echo get_site_url() . '/'; ?>about">About Us</a></li>
-          <li><a href="#works-collapse" class="has-child" data-toggle="collapse">Căn hộ</a>
-              <ul class="collapse" id="works-collapse">
-                  <li><a href="<?php echo get_site_url() . '/'; ?>detail.html">Detail v1</a></li>
-                  <li><a href="<?php echo get_site_url() . '/'; ?>detail-2.html">Detail v2</a></li>
-                  <li><a href="<?php echo get_site_url() . '/'; ?>detail-3.html">Detail v3</a></li>
-              </ul>
-          </li>
-          <li><a href="<?php echo get_site_url() . '/'; ?>contact">Contact Us</a></li>*/
-         if ( $item->is_dropdown && $depth === 0 ) {
-             $item_html = str_replace( 'class="', 'class="th-dropdown', $item_html );
-             $item_html = str_replace( '<a', '<a class="title font-gotham dropdown-toggle" data-toggle="dropdown"', $item_html );
-             $item_html = str_replace( '</a>', ' <span class="caret"></span></a>', $item_html );
-         }
-
-         if ( !$item->is_dropdown && $depth === 0 ) {
-             $item_html = str_replace( 'class="', 'class="category-item ', $item_html );
-             $item_html = str_replace( '<a', '<a class="title font-gotham"', $item_html );
-         }
-
-        $output .= $item_html;
-    }
-
-    function display_element($element, &$children_elements, $max_depth, $depth = 0, $args, &$output) {
-        if ( $element->current )
-        $element->classes[] = 'active';
-
-        $element->is_dropdown = !empty( $children_elements[$element->ID] );
-
-        if ( $element->is_dropdown ) {
-            if ( $depth === 0 ) {
-                $element->classes[] = 'category-item dropdown';
-            } elseif ( $depth === 1 ) {
-                $element->classes[] = 'dropdown-submenu';
-            }
-        }
-        parent::display_element($element, $children_elements, $max_depth, $depth, $args, $output);
-    }
-}
-
 function get_breadcrumb() {
     echo '<a href="'.home_url().'" rel="nofollow">Trang chủ</a>';
     if (is_category() || is_single()) {
