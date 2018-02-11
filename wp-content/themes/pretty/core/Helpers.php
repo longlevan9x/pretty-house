@@ -77,4 +77,34 @@ class Helpers
 	    }
 	    return $galleries;
 	}
+
+	public static function getLogos()
+	{
+		$image = get_template_directory_uri() . PATH_NO_IMAGE;
+		$logos = get_posts(array( 'post_type' => 'logo', 'post_status' => 'publish'));
+		if (isset($logos) && !empty($logos)) {
+			$image = get_image(get_the_post_thumbnail_url($logos[0]->ID));
+		}
+		return '<img src="'.$image.'" alt="" style="width: 100%; height: 100%;" />';
+	}
+
+	public static function getUrlBack()
+	{
+		if (isset($_SERVER['HTTP_REFERER'])) {
+			return $_SERVER['HTTP_REFERER'];
+		}
+	}
+
+	public static function showMessageContact()
+	{
+		$mess = isset($_GET['mess']) ? $_GET['mess'] : '';
+		$message = "";
+		if ($mess == 'success') {
+			$message = "Cảm ơn bạn đã phản hồi cho chúng tôi.";
+		}
+		else if($mess == 'error') {
+			$message = "Có lỗi xảy ra. Bạn vui lòng thử lại.";
+		}
+		return "<h4 style='text-align:center;'>$message</h4>";
+	}
 }

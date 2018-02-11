@@ -8,40 +8,7 @@
           <h2>Contact Us</h2>
           <p></p>
           <div class="divide10"></div>
-          <div class="form-container">
-            <form action="contact/vanilla-form.php" method="post" class="vanilla vanilla-form" novalidate="novalidate">
-              <div class="row">
-                <div class="col-sm-6">
-                  <div class="form-field">
-                    <label>
-                      <input type="text" name="name" placeholder="Your name" required="required">
-                    </label>
-                  </div>
-                  <!--/.form-field --> 
-                </div>
-                <!--/column -->
-                <div class="col-sm-6">
-                  <div class="form-field">
-                    <label>
-                      <input type="email" name="email" placeholder="Your e-mail" required="required">
-                    </label>
-                  </div>
-                  <!--/.form-field --> 
-                </div>
-                <div class="col-sm-12">
-                  <textarea name="message" placeholder="Type your message here..." required="required"></textarea>
-                  <input type="submit" class="btn btn-large" value="Submit Message" data-error="Fix errors" data-processing="Sending..." data-success="Thank you!">
-                  <footer class="notification-box"></footer>
-                </div>
-                <!--/column --> 
-                
-              </div>
-              <!--/.row -->
-              
-            </form>
-            <!--/.vanilla-form --> 
-          </div>
-          <!--/.form-container --> 
+          <?= get_template_part('contact-mail'); ?>
           
         </div>
         <!--/column -->

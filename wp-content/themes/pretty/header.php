@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="<?php language_attributes(); ?>">
+<html <?php language_attributes(); ?>>
 <head>
   <meta charset="<?php bloginfo('charset') ?>"/>
   <link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>">
@@ -31,6 +31,9 @@
       html { margin-top: 0px !important; }
       * html body { margin-top: 0px !important; }
     }
+    .modal-backdrop.in {
+      opacity: 0 !important;
+    }
   </style>
 </head>
 <body class="full-layout" <?php body_class(); ?>>
@@ -39,8 +42,10 @@
     <div class="container">
       <div class="navbar-header">
         <div class="navbar-brand">
-          <h2>
-            <a href="<?php echo get_site_url() . '/'; ?>"><?php bloginfo('name'); ?></a>
+          <h2 style="width: 35px; height: 35px;margin-top: 10px" >
+            <a href="<?php echo get_site_url() . '/'; ?>" >
+              <?php echo Helpers::getLogos(); ?>
+            </a>
           </h2>
         </div>
         <div class="nav-bars-wrapper">

@@ -110,66 +110,7 @@
         <!-- .widget -->
         
         <div class="divide20"></div>
-        <div class="form-container">
-          <form action="contact/vanilla-form.php" method="post" class="vanilla vanilla-form" novalidate="novalidate">
-            <div class="row">
-              <div class="col-sm-6">
-                <div class="form-field">
-                  <label>
-                    <input type="text" name="name" placeholder="Your name" required="required">
-                  </label>
-                </div>
-                <!--/.form-field --> 
-              </div>
-              <!--/column -->
-              <div class="col-sm-6">
-                <div class="form-field">
-                  <label>
-                    <input type="email" name="email" placeholder="Your e-mail" required="required">
-                  </label>
-                </div>
-                <!--/.form-field --> 
-              </div>
-              <!--/column -->
-              <!-- <div class="col-sm-6">
-                <div class="form-field">
-                  <label>
-                    <input type="tel" name="tel" placeholder="Phone">
-                  </label>
-                </div>
-                /.form-field 
-              </div> -->
-              <!--/column -->
-              <!-- <div class="col-sm-6">
-                <div class="form-field">
-                  <label class="custom-select">
-                    <select name="department" required="required">
-                      <option value="">Select Department</option>
-                      <option value="Sales">Sales</option>
-                      <option value="Marketing">Marketing</option>
-                      <option value="Support">Customer Support</option>
-                      <option value="Other">Other</option>
-                    </select>
-                    <span>fake select handler</span> </label>
-                </div>
-                /.form-field 
-              </div> -->
-              <!--/column -->
-              
-              <div class="col-sm-12">
-                <textarea name="message" placeholder="Type your message here..." required="required"></textarea>
-                <input type="submit" class="btn btn-large" value="Submit Message" data-error="Fix errors" data-processing="Sending..." data-success="Thank you!">
-                <!-- <footer class="notification-box"></footer> -->
-              </div>
-              <!--/column --> 
-              
-            </div>
-            <!--/.row -->
-            
-          </form>
-          <!--/.vanilla-form --> 
-        </div>
-        <!--/.form-container --> 
+        <?= get_template_part('contact-mail'); ?>
         
       </div>
       <!-- .thin2 --> 
