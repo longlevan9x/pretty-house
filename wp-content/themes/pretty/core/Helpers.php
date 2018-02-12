@@ -88,6 +88,14 @@ class Helpers
 		return '<img src="'.$image.'" alt="" style="width: 100%; height: 100%;" />';
 	}
 
+	public function getAddress()
+	{
+		$logos = get_posts(array( 'post_type' => 'logo', 'post_status' => 'publish'));
+		if (isset($logos) && !empty($logos)) {
+			return $logos[0]->post_content;
+		}
+	}
+
 	public static function getUrlBack()
 	{
 		if (isset($_SERVER['HTTP_REFERER'])) {

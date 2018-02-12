@@ -10,7 +10,7 @@
             </a>
           </h1>
           <div class="divide20"></div>
-          <p><?php bloginfo('description'); ?></p>
+          <p><?= html_entity_decode(get_bloginfo('description')); ?></p>
           <ul class="social">
             <li> <a href="#"><i class="ion-social-facebook"></i></a> </li>
             <li> <a href="#"><i class="ion-social-twitter"></i></a> </li>

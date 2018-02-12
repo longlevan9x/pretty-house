@@ -16,11 +16,7 @@
         <aside class="col-sm-4 sidebar">
           <div class="sidebox widget">
             <address>
-            <strong>Morello, Inc.</strong><br>
-            Moon Street Light Avenue, 14/05 <br>
-            Jupiter, JP 80630<br>
-            <abbr title="Phone">P:</abbr> 00 (123) 456 78 90 <br>
-            <abbr title="Email">E:</abbr> <a href="mailto:#">first.last@email.com</a>
+            <?= html_entity_decode(Helpers::getAddress()); ?>
             </address>
           </div>
           <!-- /.widget --> 

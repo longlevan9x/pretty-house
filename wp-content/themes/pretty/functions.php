@@ -182,7 +182,7 @@ function custom_logo_init()
     'hierarchical' => false,
     'menu_position' => null,
     'post-formats' => 'logo',
-    'supports' => array('title')
+    'supports' => array('title', 'editor')
   ); 
   register_post_type('logo',$args);
   add_post_type_support('logo', 'thumbnail');
